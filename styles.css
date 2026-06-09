@@ -6,19 +6,20 @@ h1 {
 }
 
 #book {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Adjust as needed */
     position: absolute;
     z-index: 100;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
 }
 
 #popup {
-    position:absolute;
-    z-index: 1;
     border: 1px solid black;
     background-color: purple;
     display: flex;
     justify-content: center;
     align-items: center;
+    position:absolute;
+    z-index: 1; 
 }
