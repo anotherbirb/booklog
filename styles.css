@@ -9,7 +9,6 @@ h1 {
     display: block;
     left:auto;
     right:auto;
-    width: 50%; /* Adjust as needed */
     position: absolute;
     z-index: 100;
 }
@@ -17,5 +16,8 @@ h1 {
 #popup {
     border: 1px solid black;
     background-color: aqua;
+    display:flex;
+    justify-content: center;
+    align-items: center;
   
 }
