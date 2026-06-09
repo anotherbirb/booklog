@@ -8,6 +8,9 @@ h1 {
 #book {
     position: absolute;
     z-index: 100;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #popup {
@@ -15,6 +18,7 @@ h1 {
     z-index: 1;
     border: 1px solid black;
     background-color: purple;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
