@@ -4,3 +4,13 @@ h1 {
     text-align: center;
     
 }
+
+.book {
+    position: absolute;
+    z-index: 100;
+}
+
+.popup {
+    position:absolute;
+    z-index: 1;
+}
