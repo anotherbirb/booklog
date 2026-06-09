@@ -13,4 +13,8 @@ h1 {
 .popup {
     position:absolute;
     z-index: 1;
+    border: 1px solid black;
+    background-color: purple;
+    justify-content: center;
+    align-items: center;
 }
