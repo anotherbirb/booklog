@@ -16,7 +16,9 @@ h1 {
 #popup {
     border: 1px solid black;
     background-color: aqua;
-    width: 300px; /* Essential: The div must have a constrained width */
-    display: block;
-    margin: 0 auto;
+    color: black;
+}
+
+#committest {
+    color: blue;
 }
