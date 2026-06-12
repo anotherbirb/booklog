@@ -17,7 +17,8 @@ h1 {
     border: 1px solid black;
     background-color: aqua;
     width: 300px; /* Essential: The div must have a constrained width */
-    margin-left: auto;
-    margin-right: auto;
-  
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    height: 100vh;  
 }
