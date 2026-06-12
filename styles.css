@@ -3,15 +3,12 @@
     border: 1px solid black;
     background-color: aqua;
     color: black;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index:100;
 }
 
-#popup {
-    border: 1px solid black;
-}
-
-#commitest {
-    color: blue;
-}
 
 h1 {
     text-align: center;
@@ -29,6 +26,6 @@ p {
     left: auto;
     right: auto;
     position: absolute;
-    z-index: 100;
+    z-index: 2;
 }
 
