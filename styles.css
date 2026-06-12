@@ -1,18 +1,4 @@
 /* css */
-
-h1 {
-    text-align: center;
-    
-}
-
-#book {
-    display: block;
-    left:auto;
-    right:auto;
-    position: absolute;
-    z-index: 100;
-}
-
 #popup {
     border: 1px solid black;
     background-color: aqua;
@@ -22,3 +8,17 @@ h1 {
 #committest {
     color: blue;
 }
+
+h1 {
+    text-align: center;
+    
+}
+
+#book {
+    display: block;
+    left: auto;
+    right: auto;
+    position: absolute;
+    z-index: 100;
+}
+
