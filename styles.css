@@ -18,6 +18,12 @@ h1 {
     
 }
 
+p {
+    font-family: verdana;
+    font-size: 20px;
+    color:blue;
+}
+
 #book {
     display: block;
     left: auto;
