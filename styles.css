@@ -1,4 +1,21 @@
 /* css */
+#book {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    position: absolute;
+    z-index: 2;
+}
+
+#bookimg {
+    display: block;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 2;
+}
+
 #popup {
     border: 1px solid red;
     background-color: aqua;
@@ -33,12 +50,7 @@
     cursor: pointer;
 }
 
-#book {
-    display: block;
-    left: 50%;
-    position: absolute;
-    z-index: 2;
-}
+
 
 
 h1 {
@@ -52,11 +64,4 @@ p {
     color:red;
 }
 
-#book {
-    display: block;
-    left: auto;
-    right: auto;
-    position: absolute;
-    z-index: 2;
-}
 
