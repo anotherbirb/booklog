@@ -16,7 +16,7 @@ function closePopup() {
 const categories = ["title", "summary", "analysis", "quotes", "comments"] //number  of categories; old name "array"
 
 function logData(event) { //called when "LOG" button pressed
-    //event.preventDefault()
+    event.preventDefault()
     /* example
     const titleText = document.getElementById("title").value; 
     document.getElementById("formOutput").innerHTML = titleText; */
@@ -37,6 +37,8 @@ function logData(event) { //called when "LOG" button pressed
 
     const numSaves = parseInt(localStorage.getItem("numberSaves")) + 1;
     localStorage.setItem("numberSaves", String(numSaves));
+
+    location.reload()
 }
 
 window.onload = function() {
