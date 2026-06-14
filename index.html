@@ -11,11 +11,16 @@
 <body>
     <h1 style="text-align:center;">hey guys welcome to my minecraft channel</h1>
     <p>This is sdaas lk lkjljlkfasdjkljfasldkjfklasdjflkasjdflkasjdflaksdjflaksdj</p>
-    <p id="form sub">php output when i finish php</p>
+    <p id="formOutput">all my homies HATE php</p>
+    <button id="clear" onclick="clearStorage()">clear local storage</button>
     <img src="book pixel online.jpg" alt="book img" usemap="#bookmap" id="bookimg">
     <map name="bookmap">
     <area shape="poly" coords="31,89, 131,38, 187,93, 187,129, 89,178, 32,129," href="#" onclick="openPopup()">
     </map>
+
+    <div id="saveContainer">
+        <p>save container div here </p>
+    </div>
     
 
     <script src="script.js"></script>
@@ -24,16 +29,24 @@
         <p class="popup-text">test</p>
         <p class="popup-text">div div di vdiv</p>
         <button id="closePopup" onclick="closePopup()">X</button>
-        <form action="log.php">
+        <form method="post">
             <label for="test">test:</label>
-            <input type="text" id="test" name="test"> <br>
+            <input type="text" id="title" name="test" placeholder="title here"> <br>
+            <input type="text" id="summary" name="test" placeholder="summary">
+            <input type="text" id="analysis" name="test" placeholder="analysis">
+            <input type="text" id="quotes" name="test" placeholder="quotes">
+            <input type="text" id="comments" name="test" placeholder="comments">
+
+            <button id="log" onclick="logData()">LOG</button>
+
+            <!-- radio demon?!?!
 
             <input type="radio" id="radio" name="radio">
             <label for="radio">radio:</label> <br>
             <input type="radio" id="radio2" name="radio">
             <label for="radio2">radio2</label> <br>
-            <input type="submit" value="LOG">
-
+            
+            -->
         </form>
     </div>
     

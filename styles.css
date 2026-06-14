@@ -50,6 +50,12 @@
     cursor: pointer;
 }
 
+#title {
+    display:block;
+    margin: 0 auto;
+    height: 100px;
+}
+
 
 
 
@@ -60,8 +66,6 @@ h1 {
 
 p {
     font-family: verdana;
-    font-size: 20px;
-    color:red;
 }
 
 
