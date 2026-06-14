@@ -17,10 +17,13 @@
 }
 
 #popup {
-    border: 1px solid red;
-    background-color: aqua;
+    display: block; /* CHANGE TO DISPLAYNONE */
+
+    border: 5px solid #9c7b62;
+    border-radius: 25px;
+    background-color: #e8d1b5;
     color: black;
-    display: none;
+    
     height: 75%;
     width: 90%;
     top: 10%;
@@ -29,8 +32,52 @@
     align-items: center;
     justify-content: center;
 
-    position: absolute;
+    position: fixed;
     z-index:100; 
+}
+
+#closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #c2a68f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* default state — empty and not focused */
+input {
+    background-color: #d4bea3;
+}
+
+/* user is typing in it (focused) */
+input:focus {
+    background-color: #d4bea3;
+    outline: none;
+}
+
+/* has text and not focused */
+input:not(:placeholder-shown):not(:focus) {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.formInput {
+    background-color: #d4bea3;
+    
+    border: 0px;
+    border-radius: 10px;
+    color:#573719;
+
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.formInput::placeholder {
+    color: #573719;
+    font-family: "Lucida Console", "Courier New", monospace;
+    opacity: 0.5;
 }
 
 .popup-text {
@@ -39,34 +86,50 @@
     font-family: verdana;
 }
 
-#closePopup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
 
-#title {
+#titleForm {
     display:block;
     margin: 0 auto;
-    height: 100px;
+    margin-top: 1%;
+    height: 50px;
+    width: 500px;
+    font-size: 25px;
+    text-align: center;
 }
+
+#summaryForm {
+    display:flex;
+
+    margin-right: 2%;
+    margin-left:auto;
+    margin-top:2%;
+    height: 125px;
+    width: 550px;
+}
+
+#analysisForm {
+    display:flex;
+
+    height: 125px;
+    width: 550px;
+    margin-right: 2%;
+    margin-left: auto;
+    margin-top: 2%;
+}
+
 
 
 
 
 h1 {
     text-align: center;
-    color:blueviolet
+    color:#573719;
+    font-family: "Lucida Console", "Courier New", monospace;
     
 }
 
 p {
-    font-family: verdana;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 

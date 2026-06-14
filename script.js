@@ -1,3 +1,7 @@
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
+
 function openPopup() {
     document.getElementById("popup").style.display = "block";
 }
@@ -54,20 +58,21 @@ window.onload = function() {
 
         for (let s=1; s<=numSaves; s++) {
             const div = document.createElement('div');
+            div.classList.add("entries")
 
             document.getElementById("saveContainer").appendChild(div)
+            
 
             for (let i=0; i<categories.length;i++) {
-                const p = document.createElement('p');
+                //const p = document.createElement('p');
 
                 const keyName = s + "_" + categories[i]
                 const input = localStorage.getItem(keyName)
                 console.log("keyname:", keyName)
                 console.log("value of keyname:", localStorage.getItem(keyName))
 
-                p.innerHTML = input //change change <<<<<<
-                div.appendChild(p);
-                console.log("worked");
+                //p.innerHTML = input 
+                //div.appendChild(p);
             }
 
             

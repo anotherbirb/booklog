@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 style="text-align:center;">hey guys welcome to my minecraft channel</h1>
-    <p>This is sdaas lk lkjljlkfasdjkljfasldkjfklasdjflkasjdflkasjdflaksdjflaksdj</p>
-    <p id="formOutput">all my homies HATE php</p>
+
+    <h1 style="text-align:center;">book logger</h1>
+
     <button id="clear" onclick="clearStorage()">clear local storage</button>
+
     <img src="book pixel online.jpg" alt="book img" usemap="#bookmap" id="bookimg">
     <map name="bookmap">
     <area shape="poly" coords="31,89, 131,38, 187,93, 187,129, 89,178, 32,129," href="#" onclick="openPopup()">
@@ -26,16 +27,14 @@
     <script src="script.js"></script>
 
     <div id="popup">
-        <p class="popup-text">test</p>
-        <p class="popup-text">div div di vdiv</p>
+        <!-- <p class="popup-text">class popup text</p> -->
         <button id="closePopup" onclick="closePopup()">X</button>
         <form method="post">
-            <label for="test">test:</label>
-            <input type="text" id="title" name="test" placeholder="title here"> <br>
-            <input type="text" id="summary" name="test" placeholder="summary">
-            <input type="text" id="analysis" name="test" placeholder="analysis">
-            <input type="text" id="quotes" name="test" placeholder="quotes">
-            <input type="text" id="comments" name="test" placeholder="comments">
+            <input type="text" id="titleForm" class="formInput" name="test" placeholder="title here"> <br>
+            <input type="text" id="summaryForm" class="formInput" name="test" placeholder="summary">
+            <input type="text" id="analysisForm" class="formInput" name="test" placeholder="analysis">
+            <input type="text" id="quotesForm" class="formInput" name="test" placeholder="quotes">
+            <input type="text" id="commentsForm" class="formInput" name="test" placeholder="comments">
 
             <button type="button" id="log" onclick="logData(event)">LOG</button>
 
