@@ -20,25 +20,24 @@ function logData(event) { //called when "LOG" button pressed
     /* example
     const titleText = document.getElementById("title").value; 
     document.getElementById("formOutput").innerHTML = titleText; */
-
-    const saveNumber = String(localStorage.length); //so you can add one 
-
-    for (i = 0; i < categories.length; i++) { //for everything in the categories loop
-        //trying to set local storage item 
-        const key = String(localStorage.length) +  "_" + String(categories[i]); //the naming formula
-        console.log("it  worked");
-
-        const categoryData = document.getElementById(categories[i]).value; //getting
-        localStorage.setItem(key, categoryData);
-    }
-    //localStorage.setItem(saveNumber, text); /.not needed anymore i think
-
-
-
     const numSaves = parseInt(localStorage.getItem("numberSaves")) + 1;
     localStorage.setItem("numberSaves", String(numSaves));
 
-    location.reload()
+    const currentNumSaves = localStorage.getItem("numberSaves") //this is a STRING not an INT
+
+    for (i = 0; i < categories.length; i++) { //for everything in the categories loop
+        //trying to set local storage item 
+
+        const key = currentNumSaves +  "_" + String(categories[i]); //the naming formula
+
+        const categoryData = document.getElementById(categories[i]).value; //getting
+        localStorage.setItem(key, categoryData);
+        
+        console.log(key, localStorage.getItem(key))
+    }
+
+    //location.reload()
+    //^^^ put this back up 
 }
 
 window.onload = function() {
