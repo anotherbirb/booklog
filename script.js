@@ -44,21 +44,28 @@ window.onload = function() {
 
     if (localStorage.getItem("numberSaves") == null) { //checj if numberSaves eexists!
         localStorage.setItem("numberSaves", "0"); //the string will be "parseInt()"ed
-        console.log("on load: saved");
+        console.log("save is null, created new save");
+
     } else {
         console.log("saves r loading")
         console.log(localStorage.getItem("numberSaves"))
+
         const numSaves = parseInt(localStorage.getItem("numberSaves")) //so this is a NUMBER
-        for (let s=0; s<numSaves; s++) {
-            console.log("new div adding this should loop for  howevermany saves there r")
+
+        for (let s=1; s<=numSaves; s++) {
             const div = document.createElement('div');
 
             document.getElementById("saveContainer").appendChild(div)
-            console.log("ok new div added")
 
             for (let i=0; i<categories.length;i++) {
                 const p = document.createElement('p');
-                p.innerHTML = "hello" //change change <<<<<<
+
+                const keyName = s + "_" + categories[i]
+                const input = localStorage.getItem(keyName)
+                console.log("keyname:", keyName)
+                console.log("value of keyname:", localStorage.getItem(keyName))
+
+                p.innerHTML = input //change change <<<<<<
                 div.appendChild(p);
                 console.log("worked");
             }
