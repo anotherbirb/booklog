@@ -15,7 +15,8 @@ function closePopup() {
 
 const categories = ["title", "summary", "analysis", "quotes", "comments"] //number  of categories; old name "array"
 
-function logData() { //called when "LOG" button pressed
+function logData(event) { //called when "LOG" button pressed
+    event.preventDefault()
     /* example
     const titleText = document.getElementById("title").value; 
     document.getElementById("formOutput").innerHTML = titleText; */
