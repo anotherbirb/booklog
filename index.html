@@ -29,12 +29,17 @@
     <div id="popup">
         <!-- <p class="popup-text">class popup text</p> -->
         <button id="closePopup" onclick="closePopup()">X</button>
-        <form method="post">
-            <input type="text" id="titleForm" class="formInput" name="test" placeholder="title here"> <br>
-            <input type="text" id="summaryForm" class="formInput" name="test" placeholder="summary">
-            <input type="text" id="analysisForm" class="formInput" name="test" placeholder="analysis">
-            <input type="text" id="quotesForm" class="formInput" name="test" placeholder="quotes">
-            <input type="text" id="commentsForm" class="formInput" name="test" placeholder="comments">
+        <form method="post" id="foorm">
+            <textarea id="title" class="formInput" placeholder="title here"></textarea>
+            <div id="body">
+                <textarea id="quotes" class="formInput" placeholder="quotes here"></textarea>
+                <textarea id="summary" class="formInput" placeholder="summary here"></textarea>
+                <div id="break"></div>
+                <textarea id="comments" class="formInput" placeholder="comments here"></textarea>
+                <textarea id="analysis" class="formInput" placeholder="analysis here"></textarea>
+            </div>
+            
+ 
 
             <button type="button" id="log" onclick="logData(event)">LOG</button>
 

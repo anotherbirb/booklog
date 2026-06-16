@@ -64,15 +64,15 @@ window.onload = function() {
             
 
             for (let i=0; i<categories.length;i++) {
-                //const p = document.createElement('p');
+                const p = document.createElement('p');
 
                 const keyName = s + "_" + categories[i]
                 const input = localStorage.getItem(keyName)
                 console.log("keyname:", keyName)
                 console.log("value of keyname:", localStorage.getItem(keyName))
 
-                //p.innerHTML = input 
-                //div.appendChild(p);
+                p.innerHTML = input 
+                div.appendChild(p);
             }
 
             

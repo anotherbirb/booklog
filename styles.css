@@ -18,6 +18,7 @@
 
 #popup {
     display: block; /* CHANGE TO DISPLAYNONE */
+    flex-direction: row;
 
     border: 5px solid #9c7b62;
     border-radius: 25px;
@@ -48,28 +49,65 @@
 }
 
 
+
+
+
+
+
 /* default state — empty and not focused */
-input {
+textarea {
     background-color: #d4bea3;
+    flex: 1;
 }
 
 /* user is typing in it (focused) */
-input:focus {
+textarea:focus {
     background-color: #d4bea3;
     outline: none;
 }
 
 /* has text and not focused */
-input:not(:placeholder-shown):not(:focus) {
+textarea:not(:placeholder-shown):not(:focus) {
     background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+/* Width of the scrollbar */
+textarea::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Background color of the scrollbar track */
+textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 15px;
+}
+
+/* The draggable scrollbar thumb */
+textarea::-webkit-scrollbar-thumb {
+  background: #9c7b62;
+  border-radius: 4px;
+}
+
+/* Thumb color on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .formInput {
     background-color: #d4bea3;
+    resize: none;
     
-    border: 0px;
+
+    padding:1%;
+    
     border-radius: 10px;
     color:#573719;
+
+    margin: 1%;
 
     font-family: "Lucida Console", "Courier New", monospace;
 }
@@ -86,35 +124,78 @@ input:not(:placeholder-shown):not(:focus) {
     font-family: verdana;
 }
 
+#break {
+    display:none;
+}
 
-#titleForm {
+#body {
+    display:grid;
+    flex-wrap: wrap; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+
+    height: 80%;
+    width: 100%;
+
+
+}
+
+#foorm {
+    height: 100%;
+    width: 100%;
+}
+
+
+#title {
     display:block;
     margin: 0 auto;
     margin-top: 1%;
-    height: 50px;
-    width: 500px;
+    margin-bottom: 1%;
+
+    height: 8%;
+    width: 70%;
+
     font-size: 25px;
     text-align: center;
+
+    grid-column: span 2;
 }
 
-#summaryForm {
-    display:flex;
+#summary {
+    display:grid;
+    grid-row: span 2;
+
+    /*
 
     margin-right: 2%;
     margin-left:auto;
-    margin-top:2%;
-    height: 125px;
-    width: 550px;
+    margin-top:2%; 
+    height: 105px;
+    width: 47%; */
+    
 }
 
-#analysisForm {
-    display:flex;
+#analysis {
+    display:grid;
+    grid-row: span 2;
 
-    height: 125px;
-    width: 550px;
+    margin: 1%;
+    /*  
+    height: 105px;
+    width: 47%;
     margin-right: 2%;
     margin-left: auto;
-    margin-top: 2%;
+    margin-top: 2%; */
+}
+
+#quotes {
+    display:grid;
+    grid-row: span 2;
+
+}
+
+#comments  {
+    display: grid;
 }
 
 
