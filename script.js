@@ -10,6 +10,10 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
 } 
 
+function closeLoad() {
+    document.getElementById("loadLog").style.display = "none"
+}
+
 
 
 
@@ -60,9 +64,16 @@ window.onload = function() {
             const div = document.createElement('div');
             div.classList.add("entries")
 
+
+            div.id = s;
+            console.log("the id of the div:")
+            console.log(div.id)
+
+            div.addEventListener("click", loadLog)
+
             document.getElementById("saveContainer").appendChild(div)
             
-
+            /* add p for every category
             for (let i=0; i<categories.length;i++) {
                 const p = document.createElement('p');
 
@@ -73,7 +84,7 @@ window.onload = function() {
 
                 p.innerHTML = input 
                 div.appendChild(p);
-            }
+            } */
 
             
         }
@@ -94,4 +105,46 @@ window.onload = function() {
 
 function clearStorage() {
     localStorage.clear();
+}
+
+function loadLog(ev) {
+    // so ev.target is the entire div, ev.target.id is the id of the div 
+
+    document.getElementById("loadLog").style.display = "block";
+
+    console.log("localstorage length:", window.localStorage.length)
+
+    /*
+    for (let i=1; i<localStorage.length; i++) {
+        const targetKeys = []
+        //u can use like localStorage.key(i)
+    } */
+    const targetKeys = {} //put everything we need here
+
+    Object.keys(localStorage).forEach(key => {
+        
+        //console.log("KEY:", key, ", VALUE:", localStorage.getItem(key))
+
+        const value = localStorage.getItem(key) // i dont think i need this?? no i do
+        const targetSave = String(ev.target.id) //id of clicked div
+        const keySaveNum = key[0] //getting the first letter of the key string, which should be num
+
+
+        if (keySaveNum == targetSave) {
+            targetKeys[key] = value
+        }
+
+    });
+
+    for (const category of categories) {
+        const id = category + "Load";
+        const p = document.getElementById(id)
+        Object.keys(targetKeys).forEach(key => {
+            if (key.includes(category)) {
+                p.innerHTML = targetKeys[key]
+            }
+        })
+    }
+
+
 }
