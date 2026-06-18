@@ -41,9 +41,15 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #c2a68f;
-    color: white;
+    background-color: #f2dfc7;
+    color: #9c7b62;
+    
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 135%;
+
     border: none;
+    border-radius: 5px;
+    
     padding: 5px 10px;
     cursor: pointer;
 }
@@ -201,6 +207,23 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 #log {
     border: 0px;
+    border-radius: 10px;
+
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 8%;
+    width: 10%;
+
+    background-color: #f2dfc7;
+    color: #9c7b62;
+    
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 135%;
+
+    cursor: pointer;
+
 }
 
 
@@ -244,6 +267,8 @@ textarea::-webkit-scrollbar-thumb:hover {
     top: 10px;
     right: 10px;
     position: absolute;
+    padding: 5px 10px;
+
 
 
 }
