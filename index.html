@@ -10,18 +10,40 @@
 </head>
 <body>
 
-    <h1 style="text-align:center;">book logger</h1>
+    <!--
+    <ul id="navBar">
+        <li>item</li>
+        <li>item</li>
+        <li>i ate them</li>
+        <li>pac man</li>
+    </ul>
+    -->
 
-    <button id="clear" onclick="clearStorage()">clear local storage</button>
+    <div id="titleBar">
+        <h1 style="text-align:center; margin-right: auto;">book logger</h1>
+        <button id="clear" onclick="clearStorage()">clear local storage</button>
 
-    <img src="book pixel online.jpg" alt="book img" usemap="#bookmap" id="bookimg">
+    </div>
+
+    <img src="logbook.png" alt="book img" usemap="#bookmap" id="bookimg">
     <map name="bookmap">
-    <area shape="poly" coords="31,89, 131,38, 187,93, 187,129, 89,178, 32,129," href="#" onclick="openPopup()">
+    <area shape="poly" coords="8,46, 37,37, 70,37, 91,46, 125,46, 145,35, 179,36, 206,46, 206,177, 9,178" href="#" onclick="openPopup()">
     </map>
 
-    <div id="saveContainer">
-        <p>save container div here </p>
+    <div id="body">
+
+        <div id="bookshelf">
+            <div class="shelf"></div>
+            <div class="shelf"></div>
+            <div class="shelf"></div>
+        </div>
+
+
+        <div id="saveContainer"></div>
+
     </div>
+
+    
     
 
     <div id="popup">
@@ -29,7 +51,7 @@
         <button id="closePopup" onclick="closePopup()">X</button>
         <form method="post" id="foorm">
             <textarea id="title" class="formInput" placeholder="title here"></textarea>
-            <div id="body">
+            <div id="popupBody">
                 <textarea id="quotes" class="formInput" placeholder="quotes here"></textarea>
                 <textarea id="summary" class="formInput" placeholder="summary here"></textarea>
                 <div id="statsDiv" class="formInput"></div>
@@ -60,8 +82,6 @@
         <p id="quotesLoad">loadQuotes</p>
         <p id="commentsLoad">loadComments</p>
     </div>
-
-    <p id="eventListener">i have an EVENTLISTENER<p>
 
     <script src="script.js"></script>
     

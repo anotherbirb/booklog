@@ -1,4 +1,32 @@
 /* css */
+
+#titleBar {
+    display:flex;
+    justify-content: center;
+    /*align-items: flex-start; */
+    background-color: #c2a68f;
+    margin: 0;
+}
+
+#clear {
+    margin-right: 0;
+    margin-left: auto;
+    border: 0px;
+
+    height: 10vh;
+    width: 10vh;
+
+    align-self: center;
+}
+
+#body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+}
+
+
 #book {
     display: flex;
     justify-content: center; /* Centers horizontally */
@@ -135,7 +163,7 @@ textarea::-webkit-scrollbar-thumb:hover {
     border: 1px solid black;
 }
 
-#body {
+#popupBody {
     display:grid;
     flex-wrap: wrap; 
     grid-template-columns: 1fr 1fr;
@@ -269,7 +297,27 @@ textarea::-webkit-scrollbar-thumb:hover {
     position: absolute;
     padding: 5px 10px;
 
+}
 
+
+
+
+
+#bookshelf {
+    border: 10px solid #a87960;
+    background-color: #7a503a;
+    border-radius: 5px;;
+
+    
+    width: 90%;
+    height: 80vh;
+
+    margin: 1%;
+}
+
+.shelf {
+    border: 5px solid #a87960;
+    margin-top: 19%;
 
 }
 
@@ -286,6 +334,14 @@ h1 {
 
 p {
     font-family: "Lucida Console", "Courier New", monospace;
+}
+
+body {
+    background-color: #f2dfc7;
+
+    margin: 0;
+    padding: 0;
+
 }
 
 
