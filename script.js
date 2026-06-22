@@ -163,6 +163,7 @@ window.onload = function() {
 
 function clearStorage() {
     localStorage.clear();
+    location.reload();
 }
 
 function loadLog(ev) {
