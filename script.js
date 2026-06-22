@@ -23,6 +23,8 @@ function closeLoad() {
 
 const categories = ["title", "summary", "analysis", "quotes", "comments"] //number  of categories; old name "array"
 
+const bookColors = ["#853232", "#b34e25", "#bfa21f", "#327348", "#15ad8f", "#1573ad", "#34438a", "#604094", "#944090"]
+
 function logData(event) { //called when "LOG" button pressed
     event.preventDefault()
     /* example
@@ -44,11 +46,11 @@ function logData(event) { //called when "LOG" button pressed
         console.log(key, localStorage.getItem(key))
     }
 
-    //location.reload()
+    location.reload()
     //^^^ put this back up 
 }
 
-window.onload = function() {
+window.onload = function() {    
 
     if (localStorage.getItem("numberSaves") == null) { //checj if numberSaves eexists!
         localStorage.setItem("numberSaves", "0"); //the string will be "parseInt()"ed
@@ -61,16 +63,44 @@ window.onload = function() {
         const numSaves = parseInt(localStorage.getItem("numberSaves")) //so this is a NUMBER
 
         for (let s=1; s<=numSaves; s++) {
+
+            overflowCheck(s)
+
+
             const div = document.createElement('div');
-            div.classList.add("entries")
-
-
+            div.classList.add("books")
             div.id = s;
-            console.log("the id of the div:")
-            console.log(div.id)
+
+            const randomColor = bookColors[Math.floor(Math.random() * bookColors.length)]
+            div.style.backgroundColor = randomColor
+
+            function randomHeight(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            div.style.height = randomHeight(19, 22) + "vh"
 
             div.addEventListener("click", loadLog)
 
+            //getting the title
+            const title = document.createElement('p');
+            const titleKey = s + "_" + "title";
+            const titleValue = localStorage.getItem(titleKey)
+            let titleHTML = titleValue
+
+            if (titleValue.length>=13) {
+                const shortened = titleValue.slice(0, 12)
+                titleHTML = shortened + "..."
+            } else {
+                titleHTML = titleValue
+            }
+
+            title.innerHTML = titleHTML
+
+            
+
+            div.appendChild(title)
+
+            console.log("about to append book", s, "to shelf with id:", document.getElementById("saveContainer").id);
             document.getElementById("saveContainer").appendChild(div)
             
             /* add p for every category
@@ -86,22 +116,50 @@ window.onload = function() {
                 div.appendChild(p);
             } */
 
-            
         }
-
         
     }
 
+    //overflow check
 
-    //for loop here lol
+    function overflowCheck(s) {
 
-    /*
-    const text = localStorage.getItem("savedText");
-    if (text) {
-        document.getElementById("formOutput").innerHTML = text;
+        if (document.querySelector(".books")) {
+            let bookWidth = 0
+            document.querySelectorAll(".books").forEach((element) => {
+            if (element.parentElement.id === "saveContainer") {
+                bookWidth += element.offsetWidth
+            }
+            
+            })
+
+            const bookshelf = document.getElementById("bookshelf")
+            const shelfWidth = document.getElementById("saveContainer")
+            const singleBookWidth = document.querySelector(".books").offsetWidth
+
+            //console.log("bookWidth:", bookWidth, "shelfWidth:", shelfWidth.clientWidth, "after book", s);   
+
+            if (bookWidth>=shelfWidth.clientWidth - (2 * singleBookWidth)) { //if its overflowing
+                console.log("overflowing!!!")
+
+                const array = Array.from(document.querySelectorAll(".shelf")) //converting elements to array
+                const currentShelf = document.getElementById("saveContainer")
+                const index = array.indexOf(currentShelf)
+            
+                currentShelf.id = String(index) //resetting current shelf id
+                array[index + 1].id = "saveContainer"
+            
+        
+            }
+        }
     }
-    */
+
+
+        
+    
+    
 }
+
 
 function clearStorage() {
     localStorage.clear();
@@ -112,7 +170,9 @@ function loadLog(ev) {
 
     document.getElementById("loadLog").style.display = "block";
 
-    console.log("localstorage length:", window.localStorage.length)
+    if (ev.target.tagName == "P") {
+        ev = ev.target.parentElement 
+    } //EV IS NOW EV.TARGET DO NOT USE EV.TARGET
 
     /*
     for (let i=1; i<localStorage.length; i++) {
@@ -126,8 +186,9 @@ function loadLog(ev) {
         //console.log("KEY:", key, ", VALUE:", localStorage.getItem(key))
 
         const value = localStorage.getItem(key) // i dont think i need this?? no i do
-        const targetSave = String(ev.target.id) //id of clicked div
-        const keySaveNum = key[0] //getting the first letter of the key string, which should be num
+        const targetSave = String(ev.id) //id of clicked div
+        const underscore = key.indexOf("_")  //underscore var is a number
+        const keySaveNum = key.slice(0, underscore) //getting the first letter of the key string, which should be num THIS IS THE PROBME
 
 
         if (keySaveNum == targetSave) {
@@ -146,5 +207,13 @@ function loadLog(ev) {
         })
     }
 
+    console.log(targetKeys, "targetkeys ,<<")
+
 
 }
+
+
+function randomHeight(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
