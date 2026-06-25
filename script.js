@@ -218,3 +218,5 @@ function randomHeight(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+console.log(window.innerWidth + 'x' + window.innerHeight)
+console.log("screen sizes")
