@@ -173,7 +173,10 @@ function loadLog(ev) {
 
     if (ev.target.tagName == "P") {
         ev = ev.target.parentElement 
-    } //EV IS NOW EV.TARGET DO NOT USE EV.TARGET
+        //EV IS NOW EV.TARGET DO NOT USE EV.TARGET
+    } else {
+        ev = ev.target
+    }
 
     /*
     for (let i=1; i<localStorage.length; i++) {
