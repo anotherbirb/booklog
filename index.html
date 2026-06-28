@@ -52,10 +52,19 @@
         <button id="closePopup" onclick="closePopup()">X</button>
         <form method="post" id="foorm">
             <textarea id="title" class="formInput" placeholder="title here"></textarea>
+           
             <div id="popupBody">
+                
                 <textarea id="quotes" class="formInput" placeholder="quotes here"></textarea>
                 <textarea id="summary" class="formInput" placeholder="summary here"></textarea>
-                <div id="statsDiv" class="formInput"></div>
+                <div id="statsDiv" class="formInput">
+                <!-- lol -->
+                <form id="colorPicker">
+                    <select class="formInput" id="selectColor">
+                        <option value="" disabled selected hidden>color</option>                        
+                    </select>
+                </form>
+                </div>
                 <textarea id="analysis" class="formInput" placeholder="analysis here"></textarea>
                 <textarea id="comments" class="formInput" placeholder="comments here"></textarea>
             </div>

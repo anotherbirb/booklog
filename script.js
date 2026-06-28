@@ -23,6 +23,8 @@ function closeLoad() {
 
 const categories = ["title", "summary", "analysis", "quotes", "comments"] //number  of categories; old name "array"
 
+const extras = ["color", "size"]
+
 const bookColors = ["#853232", "#b34e25", "#bfa21f", "#327348", "#15ad8f", "#1573ad", "#34438a", "#604094", "#944090"]
 
 function logData(event) { //called when "LOG" button pressed
@@ -45,6 +47,13 @@ function logData(event) { //called when "LOG" button pressed
         
         console.log(key, localStorage.getItem(key))
     }
+
+    //setting color
+    const colorName = currentNumSaves + "_" + "color"
+    const colorData = document.getElementById("selectColor").value
+    localStorage.setItem(colorName, colorData)
+    console.log(colorName, localStorage.getItem(colorName))
+
 
     location.reload()
     //^^^ put this back up 
@@ -71,9 +80,16 @@ window.onload = function() {
             div.classList.add("books")
             div.id = s;
 
+            //getting color
             const randomColor = bookColors[Math.floor(Math.random() * bookColors.length)]
-            div.style.backgroundColor = randomColor
+            const colorKey = s + "_" + "color"
+            if (localStorage.getItem(colorKey)) {
+                div.style.backgroundColor = localStorage.getItem(colorKey)
+            } else {
+                div.style.backgroundColor = randomColor
+            }
 
+            //setting height
             function randomHeight(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
@@ -221,5 +237,16 @@ function randomHeight(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(window.innerWidth + 'x' + window.innerHeight)
-console.log("screen sizes")
+
+
+function makeColorOptions() {
+    for (color in bookColors) {
+        const newOption = document.createElement("option")
+        newOption.value = bookColors[color]
+        newOption.innerHTML = bookColors[color]
+        newOption.style.color = bookColors[color]
+        document.getElementById("selectColor").append(newOption)
+    }
+}
+
+makeColorOptions()
